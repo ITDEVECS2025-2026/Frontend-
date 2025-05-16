@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 const links = [
   { href: "/", label: "", imageSrc: "/Frame 136.png", imageAlt: "logo-image", imageWidth: 50, imageHeight: 50 },
-  { href: "/about", label: "About", icon: <HiOutlineUser size={24} /> },
-  { href: "/project", label: "Project", icon: <HiOutlineChip size={24} /> },
+  { href: "/about",  icon: <HiOutlineUser size={24} /> },
+  { href: "/project",  icon: <HiOutlineChip size={24} /> },
   { href: "/", label: "", icon: <HiOutlineChat size={24} /> }
 ];
 
@@ -26,7 +26,7 @@ const NavbarMobile = () => {
                   width={imageWidth}
                 />
               )}
-              <span className={pathname === href ? 'text-AddsOn-neutral' : 'text-secondary-normal-normal'}>
+              <span className={pathname === href ? 'text-AddsOn-neutral' : 'text-secondary-200'}>
                 {icon}
               </span>
               {pathname === href && (

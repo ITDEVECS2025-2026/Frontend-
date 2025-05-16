@@ -4,16 +4,19 @@ import { usePathname } from 'next/navigation';
 import Splash from '@/pages/splash';
 import Image from 'next/image';
 import NavbarMobile from './NavbarMobile';
+import NavbarHeader from './NavbarHeader';
 type LayoutPros = {
   children: React.ReactNode;
   withFooter?: boolean;
   withNavbar?: boolean;
+  withFooterNav?: boolean;
 } & React.ComponentPropsWithRef<'div'>;
 
 export default function Layout({
   children,
-  withFooter = true,
-  withNavbar = true,
+  withFooter = false,
+  withNavbar = false,
+  withFooterNav  = false,
 }: LayoutPros) {
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -34,9 +37,10 @@ export default function Layout({
           <Splash />
           :
           <>
-            {withNavbar && <NavbarItem />}
+            {withNavbar && <NavbarHeader />}
             {children}
-            {withFooter && <NavbarMobile />}
+
+            {withFooterNav && <NavbarItem />}
           </>
       }
     </div>

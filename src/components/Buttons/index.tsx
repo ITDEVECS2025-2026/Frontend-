@@ -9,7 +9,7 @@ const Button = ({
   style,
   type = 'button',
   isIcon = false,
-  size = "medium",
+  size = "small",
   prefix,
   suffix,
   variant = "default",
@@ -31,7 +31,6 @@ const Button = ({
         "relative rounded-3xl flex gap-2 items-center justify-center text-center ",
         [
           size === 'small' && ['min-h-[38px] py-1 px-[18px]'],
-          size === 'medium' && ['min-h-[42px] py-2 px-[22px]'],
           size === 'large' && ['min-h-[50px] py-3 px-[26px]'],
         ],
         [
@@ -41,21 +40,22 @@ const Button = ({
         ],
         [
           variant === "default" && [
-            "bg-AddsOn-neutral text-primary-normal-normal",
+            "bg-user-Neutral text-primary-200",
             isHovered && isHover && "shadow-[0_-2px_10px_rgba(255,255,255,1),0_2px_10px_rgba(255,255,255,1)] ",
           ],
           variant === "outline" && [
-            "border border-AddsOn-neutral border-solid text-AddsOn-neutral",
-            isHovered && isHover && "border-AddsOn-gray text-AddsOn-gray ",
+            "border border-user-Neutral text-user-Neutral ",
+            isHovered && isHover && "border border-user-Hover-2 text-user-Hover-2",
+
           ],
           variant === "text" && [
-            "text-AddsOn-neutral",
-            isHovered && isHover && "text-AddsOn-gray",
+            "text-user-Neutral",
+            isHovered && isHover && "text-user-Hover-2",
           ],
         ],
-      
-        className,
-      ])}
+        className,]
+      )}
+
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
