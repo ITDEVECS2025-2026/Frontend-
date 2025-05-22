@@ -72,7 +72,7 @@ const Card: React.FC<CardProps> = (props) => {
         );
     } else if (props.Variant === 'AssistantCard') {
         const { Header, Paragraph, ImageSrc, ImageAlt, Width, Height, Coordinator, AddImage } = props;
-        variantStyles = clsxm("w-[215px] relative min-h-[344px] bg-white bg-opacity-5 relative rounded-2xl border border-white border-opacity-20 shadow-lg", className
+        variantStyles = clsxm("w-[215px] relative min-h-[344px] bg-User-GlassEffect bg-opacity-5 relative rounded-2xl border border-white border-opacity-20 shadow-lg", className
 
         );
         content = (
@@ -80,15 +80,14 @@ const Card: React.FC<CardProps> = (props) => {
 
             )}>
 
-                <div className='w-[201px] h-[253px] bg-secondary-normal-normal rounded-2xl flex justify-center items-end absolute top-3 right-[0.4rem]'>
+                <div className='w-[201px] h-[253px] bg-secondary-200 rounded-2xl flex justify-center items-end absolute top-3 right-[0.4rem]'>
                     {AddImage && ImageSrc && (
                         <Image src={ImageSrc} alt={ImageAlt || "default alt text"} width={Width} height={Height} className='' />
                     )}
 
                 </div>
                 <div className={`absolute bottom-5 flex flex-col justify-center items-center gap-2 }`}>
-                    <div className={` relative flex flex-row justify-center ${Coordinator ? 'left-[50%]' : 'left-[40%]'} `}>
-                        {Coordinator ? <Image src={`/crown.svg`} alt='crown' width={15} height={15} className=' relative right-[40%]' /> : ""}
+                    <div className={` relative flex flex-row justify-center  `}>
                         <Typography size='base' variant='Header' className='font-semibold text-AddsOn-neutral'>
                             {Header}
                         </Typography>
