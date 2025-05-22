@@ -190,6 +190,8 @@ const Home = () => {
           </motion.div>
         )}
       </div>
+
+     
     </Layout>
   );
 };
