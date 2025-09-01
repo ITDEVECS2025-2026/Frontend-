@@ -7,7 +7,6 @@ enum Variants {
 }
 enum SizeVariants {
     'small',
-    'medium',
     'large',
 }
 

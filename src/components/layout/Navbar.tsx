@@ -1,50 +1,59 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import React from 'react';
 import { useRouter } from 'next/router';
-import Button from '../Buttons';
-import { HiOutlineChip, HiOutlineUser } from 'react-icons/hi';
+import { HiOutlineCpuChip, HiOutlinePrinter, HiOutlineUser } from 'react-icons/hi2';
 
 const links = [
-  { href: "/", label: "", imageSrc: "/Frame 136.png", imageAlt: "logo-image", imageWidth: 50, imageHeight: 50 },
-  { href: "/about", label: "About", icon: <HiOutlineUser size={24} /> },
-  { href: "/project", label: "Project", icon: <HiOutlineChip size={24} /> }
+  {
+    href: '/about',
+    icon: <HiOutlineUser size={24} />,
+  },
+  {
+    href: '/project',
+    icon: <HiOutlineCpuChip size={24} />,
+  },
+  {
+    href: '/print',
+    icon: <HiOutlinePrinter size={24} />,
+  },
 ];
 
 const NavbarItem = () => {
-  const { pathname } = useRouter(); // Dapatkan rute saat ini
-  const handleClick = () => {
-    window.location.href = ('https://www.instagram.com/ecs_epits/?igsh=MWRvdm13YWNiNmg3bg%3D%3D')
-  }
+  const { pathname } = useRouter();
+
   return (
-    <div className="lg:flex z-[99999] hidden justify-evenly gap-16 items-center px-10 fixed bg-AddsOn-gray h-[68px] top-[50px] right-1/2 translate-x-[48%] rounded-full">
-      <ul className="flex items-center gap-10">
-        {links.map(({ href, imageSrc, imageAlt, imageWidth, imageHeight, label, icon }) => (
-          <li key={href} className="flex items-center">
-            <Link href={href} className="flex items-center ">
-              {imageSrc && (
-                <Image
-                  src={imageSrc}
-                  alt={imageAlt}
-                  height={imageHeight}
-                  width={imageWidth}
-                />
-              )}
-              <span className={pathname === href ? 'text-AddsOn-neutral' : 'text-secondary-normal-normal'}>
-                {icon}
-              </span>
-              {pathname === href && (
-                <span className="font-inter text-base text-AddsOn-neutral ml-1">{label}</span>
-              )}
-            </Link>
-          </li>
+    <>
+     
+      <div className="fixed bottom-0 w-screen z-[999999] flex h-[56px] bg-user-Gray justify-around items-center lg:hidden">
+        {links.map(({ href, icon }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`flex flex-col items-center justify-center px-4 py-2 transition duration-200 ease-in-out
+              ${pathname === href ? 'text-white font-semibold' : 'text-secondary-200'}
+            `}
+          >
+            {icon}
+          </Link>
         ))}
-      </ul>
-      <Button variant="default" onClick={handleClick} isHovered>
-        Reach Us
-      </Button>
-    </div>
+      </div>
+
+      <div className="hidden lg:flex fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-user-Gray rounded-full px-6 py-2 shadow-lg items-center gap-6">
+        {links.map(({ href, icon }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`flex flex-col items-center justify-center transition duration-200 ease-in-out
+              ${pathname === href ? 'text-white font-semibold' : 'text-secondary-200'}
+            `}
+          >
+            {icon}
+          </Link>
+        ))}
+      </div>
+    </>
   );
-}
+};
 
 export default NavbarItem;
+

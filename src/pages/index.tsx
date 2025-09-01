@@ -78,13 +78,14 @@ const Home = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout withNavbar withFooterNav>
+      {/* Background */}
       <Image
-        src={`/Background-Default.png`}
+        src="/Background-Default.png"
         alt="background"
         fill
         objectFit="cover"
-        className="fixed inset-0 block"
+        className="fixed inset-0 -z-10"
       />
 {/* 
       {popup && (
@@ -129,7 +130,7 @@ const Home = () => {
         </div>
       )} */}
 
-      <div className="h-screen w-screen flex flex-col bg-primary-normal-normal justify-center items-center text-secondary-normal-normal font-Poppins">
+      <div className="h-screen w-screen flex flex-col bg-primary-200 justify-center items-center text-secondary-200 font-Poppins">
         <Typography
           size="7xl"
           variant="Header"
@@ -155,20 +156,8 @@ const Home = () => {
             </motion.span>
           </span>
         </Typography>
-        <div className="absolute left-0 bottom-24 flex flex-row gap-10 w-full h-fit items-center justify-center text-secondary-normal-normal z-[2]">
-          <Link href="https://www.linkedin.com/company/ecslaboratory/">
-            <BiLogoLinkedin className="w-[24px] h-[24px]"></BiLogoLinkedin>
-          </Link>
-          <Link href="https://www.instagram.com/ecs_epits">
-            <BiLogoInstagram className="w-[24px] h-[24px]"></BiLogoInstagram>
-          </Link>
-          <Link href="">
-            <BiLogoGmail className="w-[24px] h-[24px]"></BiLogoGmail>
-          </Link>
-          <Link href="https://wa.me/6281252219023">
-            <BiLogoWhatsapp className="w-[24px] h-[24px]"></BiLogoWhatsapp>
-          </Link>
-        </div>
+
+       
         {!popup && (
           <motion.div className="absolute sm:right-20 sm:bottom-24 right-6 bottom-24 flex flex-row-reverse gap-10 w-full h-fit text-white">
             <motion.button

@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import Button from "@/components/Buttons";
 import Card from "@/components/Cards/Card";
 import Typography from "@/components/Typography/Typography";
-import LecturerCard from "@/components/Cards/LecturerCard";
+
 
 import Image from "next/image";
 
@@ -16,6 +16,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Carddosen from "@/components/Cards/carddosen";
 
 interface ArrowProps {
   className?: string;
@@ -440,7 +441,15 @@ const About = () => {
             THE FACULTY MEMBERS OF THE LABORATORY
           </Typography>
 
-          <LecturerCard />
+          <Carddosen 
+          Header="Pak Syamsul"
+          ImageSrc="https://itdevecs2025-2026.github.io/Images-frontend/syamsul.png"
+          ImageAlt="a"
+          SintaLink="http://sinta3.kemdikbud.go.id/authors/profile/6042960"
+          LectureText="Pak Syamsul"
+
+          />
+
           <div className=" lg:hidden mt-[200px] ">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
